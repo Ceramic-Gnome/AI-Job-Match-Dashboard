@@ -1,26 +1,26 @@
-from database.connection import SessionLocal
-from database.models import Job
+from repositories.job_repository import JobRepository
 from utils.formatting import format_datetime
 
-def main():
-    session = SessionLocal()
 
-    jobs = session.query(Job).all()
+def main():
+
+    repository = JobRepository()
+
+    jobs = repository.get_all_jobs()
 
     if not jobs:
         print("No jobs found.")
-    else:
-        print(f"\nFound {len(jobs)} job(s):\n")
+        return
 
-        for job in jobs:
-            print(f"ID: {job.id}")
-            print(f"Title: {job.title}")
-            print(f"Company: {job.company}")
-            print(f"Location: {job.location}")
-            print(f"Posted: {format_datetime(job.date_posted)}")
-            print("-" * 40)
+    print(f"\nFound {len(jobs)} job(s):\n")
 
-    session.close()
+    for job in jobs:
+        print(f"ID: {job.id}")
+        print(f"Title: {job.title}")
+        print(f"Company: {job.company}")
+        print(f"Location: {job.location}")
+        print(f"Posted: {format_datetime(job.date_posted)}")
+        print("-" * 40)
 
 
 if __name__ == "__main__":

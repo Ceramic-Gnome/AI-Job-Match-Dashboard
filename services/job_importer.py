@@ -13,7 +13,7 @@ class JobImporter:
                 Job.company == job.company,
                 Job.title == job.title,
                 Job.location == job.location,
-                Job.url == job.url
+                Job.url == job.url,
             )
             .first()
             is not None
@@ -40,7 +40,7 @@ class JobImporter:
                     location=job.location,
                     description=job.description,
                     url=job.url,
-                    date_posted=job.date_posted
+                    date_posted=job.date_posted,
                 )
 
                 session.add(db_job)
