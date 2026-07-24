@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Data Analyst",
+        "company": "CarMax",
+        "location": "Richmond, VA",
+        "description": "Analyze business data using SQL and Power BI.",
+        "url": "https://careers.carmax.com/",
+        "date_posted": "2026-07-20"
+    },
+    {
+        "title": "Business Intelligence Analyst",
+        "company": "Capital One",
+        "location": "Richmond, VA",
+        "description": "Develop dashboards and reporting solutions.",
+        "url": "https://www.capitalonecareers.com/",
+        "date_posted": "2026-07-21"
+    },
+    {
+        "title": "Data Engineer",
+        "company": "Dominion Energy",
+        "location": "Richmond, VA",
+        "description": "Build scalable ETL pipelines and data warehouses.",
+        "url": "https://careers.dominionenergy.com/",
+        "date_posted": "2026-07-22"
+    }
+]
