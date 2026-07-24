@@ -1,4 +1,5 @@
 import streamlit as st
+from components.metrics import display_metrics
 
 from repositories.job_repository import JobRepository
 from utils.formatting import format_datetime
@@ -17,20 +18,7 @@ def main():
     repository = JobRepository()
     jobs = repository.get_all_jobs()
 
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.metric(label="Jobs Imported", value=len(jobs))
-
-    with col2:
-        companies = len(set(job.company for job in jobs))
-
-        st.metric(label="Companies", value=companies)
-
-    with col3:
-        locations = len(set(job.location for job in jobs))
-
-        st.metric(label="Locations", value=locations)
+    display_metrics(jobs)
 
     if not jobs:
         st.warning("No jobs found.")
