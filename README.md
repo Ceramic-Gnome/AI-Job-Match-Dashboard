@@ -15,9 +15,9 @@ This project is designed to demonstrate practical software engineering and data 
 - SQLite and relational databases
 - ETL pipeline design
 - REST API integration
-- Streamlit dashboards
+- Streamlit dashboards and data visualization
+- Analytics and reporting workflows
 - AI-assisted resume and job matching
-- Git and GitHub workflow
 
 ---
 
@@ -43,24 +43,23 @@ The current version of the application can:
   - Posting date
   - Company name
   - Job title
-- Display job freshness indicators:
-  - New Today
-  - This Week
-  - Older
+- Display analytics visualizations:
+  - Jobs by company
+  - Jobs by location
+  - Jobs added over time
 
 ---
 
 ## Planned Features
 
-- Streamlit dashboard
 - Greenhouse API collector
 - Lever API collector
 - Workday collector
+- Advanced analytics and reporting
 - Resume parsing
 - AI-powered job matching
 - Cover letter generation
 - Application tracking
-- Dashboard analytics
 
 ---
 
@@ -68,7 +67,7 @@ The current version of the application can:
 
 **Current Version**
 
-**v0.3.0 (Pre-release)**
+**v0.4.0 - Analytics Dashboard**
 
 ### Completed
 
@@ -80,10 +79,12 @@ The current version of the application can:
 - Job importer
 - Duplicate detection
 - Utility functions
+- Streamlit dashboard
+- Dashboard analytics and data visualization
 
 ### Currently Working On
 
-- Analytics
+- Live job collectors
 
 ---
 
@@ -94,7 +95,7 @@ The current version of the application can:
 | v0.1.0 | ETL Foundation | ✅ Complete |
 | v0.2.0 | Streamlit Dashboard Foundation | ✅ Complete |
 | v0.3.0 | Dashboard Search, Filtering, Sorting, and Job Badges | ✅ Complete |
-| v0.4.0 | Analytics Dashboard | 📅 Planned |
+| v0.4.0 | Analytics Dashboard | ✅ Complete |
 | v0.5.0 | Live Job Collectors | 📅 Planned |
 | v0.6.0 | AI Job Matching | 📅 Planned |
 | v0.7.0 | Resume Optimization | 📅 Planned |
