@@ -1,4 +1,5 @@
 import streamlit as st
+from components.analytics import display_analytics
 from components.filters import apply_filters, display_filters
 from components.job_card import display_job_card
 from components.metrics import display_metrics
@@ -14,7 +15,7 @@ def main():
     )
 
     st.title("💼 AI Job Match Dashboard")
-    st.caption("Version 0.2.0 (In Development)")
+    st.caption("Version 0.3.0 (In Development)")
 
     repository = JobRepository()
 
@@ -27,6 +28,8 @@ def main():
     display_metrics(all_jobs, filtered_jobs)
 
     st.caption(f"Showing {len(filtered_jobs)} of {len(all_jobs)} jobs")
+
+    display_analytics(filtered_jobs)
 
     for job in filtered_jobs:
         display_job_card(job)
