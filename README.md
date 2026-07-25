@@ -25,12 +25,28 @@ This project is designed to demonstrate practical software engineering and data 
 
 The current version of the application can:
 
+### Data Pipeline
+
 - Import job postings from JSON
 - Store jobs in SQLite
 - Prevent duplicate imports
-- Display imported jobs
-- Format job information for display
 - Use a modular collector/importer architecture
+- Separate database access through a repository layer
+
+### Streamlit Dashboard
+
+- Display job postings through an interactive dashboard
+- Show job summary metrics
+- Search jobs by keyword
+- Filter jobs by company and location
+- Sort jobs by:
+  - Posting date
+  - Company name
+  - Job title
+- Display job freshness indicators:
+  - New Today
+  - This Week
+  - Older
 
 ---
 
@@ -52,7 +68,7 @@ The current version of the application can:
 
 **Current Version**
 
-**v0.1.0 (Pre-release)**
+**v0.3.0 (Pre-release)**
 
 ### Completed
 
@@ -67,7 +83,7 @@ The current version of the application can:
 
 ### Currently Working On
 
-- Streamlit dashboard
+- Analytics
 
 ---
 
@@ -76,10 +92,12 @@ The current version of the application can:
 | Version | Milestone | Status |
 |----------|-----------|--------|
 | v0.1.0 | ETL Foundation | ✅ Complete |
-| v0.2.0 | Streamlit Dashboard | 🚧 In Progress |
-| v0.3.0 | Live Job Collectors | 📅 Planned |
-| v0.4.0 | AI Job Matching | 📅 Planned |
-| v0.5.0 | Resume Optimization | 📅 Planned |
+| v0.2.0 | Streamlit Dashboard Foundation | ✅ Complete |
+| v0.3.0 | Dashboard Search, Filtering, Sorting, and Job Badges | ✅ Complete |
+| v0.4.0 | Analytics Dashboard | 📅 Planned |
+| v0.5.0 | Live Job Collectors | 📅 Planned |
+| v0.6.0 | AI Job Matching | 📅 Planned |
+| v0.7.0 | Resume Optimization | 📅 Planned |
 | v1.0.0 | Stable Public Release | 📅 Planned |
 
 ---
@@ -150,20 +168,23 @@ AI-Job-Match-Dashboard/
 
 ## Technologies
 
+### Current
+
 - Python
+- Streamlit
 - SQLAlchemy
 - SQLite
+- Pandas
 - Git
 - GitHub
 
 ### Planned
 
-- Streamlit
-- Pandas
 - OpenAI API
 - LangChain (possibly)
 - PostgreSQL
 - Docker
+- Additional job APIs
 
 ---
 
@@ -209,17 +230,54 @@ py -m database.setup
 
 ## Running the Project
 
-Import sample jobs.
+### Activate the Virtual Environment
+
+Activate the Python virtual environment before running the application.
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### Initialize the Database
+
+Create the SQLite database and tables.
+
+```bash
+py -m database.setup
+```
+
+### Import Sample Jobs
+
+Load sample job postings into the database.
 
 ```bash
 py -m scripts.import_jobs
 ```
 
-View imported jobs.
+### View Imported Jobs (Optional)
+
+Verify imported jobs from the command line.
 
 ```bash
 py -m scripts.view_jobs
 ```
+
+### Launch the Dashboard
+
+Start the Streamlit dashboard.
+
+```bash
+py -m streamlit run app/main.py
+```
+
+The dashboard will open in your browser and provide:
+
+- Job summary metrics
+- Keyword search
+- Company filtering
+- Location filtering
+- Job sorting
+- Job freshness indicators
 
 ---
 
