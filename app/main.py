@@ -15,7 +15,7 @@ def main():
     )
 
     st.title("💼 AI Job Match Dashboard")
-    st.caption("Version 0.4.0 (In Development)")
+    st.caption("Version 0.5.0 (In Development)")
 
     repository = JobRepository()
 

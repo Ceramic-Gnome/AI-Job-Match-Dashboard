@@ -52,8 +52,6 @@ The current version of the application can:
 
 ## Planned Features
 
-- Greenhouse API collector
-- Lever API collector
 - Workday collector
 - Advanced analytics and reporting
 - Resume parsing
@@ -67,7 +65,7 @@ The current version of the application can:
 
 **Current Version**
 
-**v0.4.0 - Analytics Dashboard**
+**v0.5.0 - Live Job Collectors**
 
 ### Completed
 
@@ -82,11 +80,15 @@ The current version of the application can:
 - Streamlit dashboard
 - Dashboard analytics and data visualization
 - Greenhouse API collectors
+- Lever API collector
+- Multi-source job ingestion
+- Source tracking
+- Source analytics
 
 ### Currently Working On
 
-- Additional live job collectors
-- API data normalization improvements
+- Additional collector support
+- Data quality improvements
 
 ---
 
@@ -98,8 +100,8 @@ The current version of the application can:
 | v0.2.0 | Streamlit Dashboard Foundation | ✅ Complete |
 | v0.3.0 | Dashboard Search, Filtering, Sorting, and Job Badges | ✅ Complete |
 | v0.4.0 | Analytics Dashboard | ✅ Complete |
-| v0.5.0 | Live Job Collectors | 🚧 In Progress |
-| v0.6.0 | AI Job Matching | 📅 Planned |
+| v0.5.0 | Live Job Collectors | ✅ Complete |
+| v0.6.0 | AI Job Matching | 🚧 In Progress |
 | v0.7.0 | Resume Optimization | 📅 Planned |
 | v1.0.0 | Stable Public Release | 📅 Planned |
 

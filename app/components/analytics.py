@@ -14,6 +14,7 @@ def display_analytics(jobs):
         {
             "Company": job.company,
             "Location": job.location,
+            "Source": job.source,
             "Date Added": job.date_added,
         }
         for job in jobs
@@ -36,6 +37,12 @@ def display_analytics(jobs):
         location_counts = df["Location"].fillna("Unknown").value_counts()
 
         st.bar_chart(location_counts)
+
+    source_counts = df["Source"].value_counts()
+
+    st.subheader("Jobs by Source")
+
+    st.bar_chart(source_counts)
 
     st.subheader("Jobs Added Over Time")
 
