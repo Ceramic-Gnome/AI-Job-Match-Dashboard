@@ -41,6 +41,7 @@ class JobImporter:
                     description=job.description,
                     url=job.url,
                     date_posted=job.date_posted,
+                    source=job.source,
                 )
 
                 session.add(db_job)

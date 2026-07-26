@@ -81,10 +81,12 @@ The current version of the application can:
 - Utility functions
 - Streamlit dashboard
 - Dashboard analytics and data visualization
+- Greenhouse API collectors
 
 ### Currently Working On
 
-- Live job collectors
+- Additional live job collectors
+- API data normalization improvements
 
 ---
 
@@ -96,7 +98,7 @@ The current version of the application can:
 | v0.2.0 | Streamlit Dashboard Foundation | ✅ Complete |
 | v0.3.0 | Dashboard Search, Filtering, Sorting, and Job Badges | ✅ Complete |
 | v0.4.0 | Analytics Dashboard | ✅ Complete |
-| v0.5.0 | Live Job Collectors | 📅 Planned |
+| v0.5.0 | Live Job Collectors | 🚧 In Progress |
 | v0.6.0 | AI Job Matching | 📅 Planned |
 | v0.7.0 | Resume Optimization | 📅 Planned |
 | v1.0.0 | Stable Public Release | 📅 Planned |

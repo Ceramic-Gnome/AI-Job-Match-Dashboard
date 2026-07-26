@@ -19,6 +19,7 @@ def main():
         print(f"Title: {job.title}")
         print(f"Company: {job.company}")
         print(f"Location: {job.location}")
+        print(f"Source: {job.source}")
         print(f"Posted: {format_datetime(job.date_posted)}")
         print("-" * 40)
 

@@ -21,6 +21,8 @@ def display_job_card(job):
         if job.location:
             st.write(f"📍 **Location:** {job.location}")
 
+        st.write(f"🔗 **Source:** {job.source}")
+
         if job.date_posted:
             st.write(f"📅 **Posted:** {format_datetime(job.date_posted)}")
 

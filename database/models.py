@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
+
+from sqlalchemy import Column, DateTime, Integer, String
 
 from database.connection import Base
 
@@ -13,6 +14,8 @@ class Job(Base):
 
     company = Column(String, nullable=False)
 
+    source = Column(String)
+
     location = Column(String)
 
     description = Column(String)
@@ -21,10 +24,7 @@ class Job(Base):
 
     date_posted = Column(DateTime)
 
-    date_added = Column(
-        DateTime,
-        default=datetime.utcnow
-    )
+    date_added = Column(DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f"<Job(title='{self.title}', company='{self.company}')>"

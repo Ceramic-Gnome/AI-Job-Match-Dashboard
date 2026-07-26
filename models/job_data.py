@@ -9,4 +9,5 @@ class JobData:
     location: str
     description: str
     url: str
-    date_posted: datetime
+    date_posted: datetime | None
+    source: str
