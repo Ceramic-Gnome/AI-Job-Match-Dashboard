@@ -36,28 +36,40 @@ The current version of the application can:
 ### Streamlit Dashboard
 
 - Display job postings through an interactive dashboard
-- Show job summary metrics
+- Display weighted AI job match scores
+- Visualize match progress with progress bars
+- Expand job cards to view matched and missing skills
 - Search jobs by keyword
-- Filter jobs by company and location
+- Filter jobs by:
+  - Company
+  - Location
+  - Minimum Match Score
 - Sort jobs by:
+  - Match Score
   - Posting date
   - Company name
   - Job title
 - Display analytics visualizations:
+  - Match score distribution
+  - Average match score
+  - Highest match score
   - Jobs by company
   - Jobs by location
+  - Jobs by source
   - Jobs added over time
+- Resume Gap Analysis with weighted skill prioritization
 
 ---
 
 ## Planned Features
 
-- Workday collector
-- Advanced analytics and reporting
+- Interactive Job Details page
 - Resume parsing
-- AI-powered job matching
-- Cover letter generation
+- AI resume optimization recommendations
+- AI-generated cover letters
 - Application tracking
+- Workday collector
+- Additional job source integrations
 
 ---
 
@@ -65,7 +77,7 @@ The current version of the application can:
 
 **Current Version**
 
-**v0.5.0 - Live Job Collectors**
+**v0.6.0 - AI Job Matching**
 
 ### Completed
 
@@ -84,11 +96,21 @@ The current version of the application can:
 - Multi-source job ingestion
 - Source tracking
 - Source analytics
+- Candidate profile support
+- Configurable skill database
+- Weighted keyword matching
+- Match score calculation
+- Match progress bars
+- Match score sorting
+- Match score filtering
+- Match analytics dashboard
+- Resume gap analysis
+- Weighted gap prioritization
 
 ### Currently Working On
 
-- Additional collector support
-- Data quality improvements
+- Interactive Job Details page
+- Resume optimization recommendations
 
 ---
 
@@ -101,8 +123,9 @@ The current version of the application can:
 | v0.3.0 | Dashboard Search, Filtering, Sorting, and Job Badges | ✅ Complete |
 | v0.4.0 | Analytics Dashboard | ✅ Complete |
 | v0.5.0 | Live Job Collectors | ✅ Complete |
-| v0.6.0 | AI Job Matching | 🚧 In Progress |
-| v0.7.0 | Resume Optimization | 📅 Planned |
+| v0.6.0 | AI Job Matching & Resume Gap Analysis | ✅ Complete |
+| v0.7.0 | Interactive Job Details & Resume Recommendations | 🚧 In Progress |
+| v0.8.0 | AI Cover Letter Generation | 📅 Planned |
 | v1.0.0 | Stable Public Release | 📅 Planned |
 
 ---
@@ -137,12 +160,19 @@ The current version of the application can:
                           |
                           v
                +----------------------+
-               |  Streamlit Dashboard |
+               | Candidate Profile    |
                +----------+-----------+
                           |
                           v
                +----------------------+
-               |   AI Job Matching    |
+               | AI Job Matcher       |
+               +----------+-----------+
+                          |
+                          v
+               +----------------------+
+               | Streamlit Dashboard  |
+               | Analytics & Gap      |
+               | Analysis             |
                +----------------------+
 ```
 
@@ -180,6 +210,8 @@ AI-Job-Match-Dashboard/
 - SQLAlchemy
 - SQLite
 - Pandas
+- JSON
+- Regular Expressions (re)
 - Git
 - GitHub
 
@@ -275,12 +307,17 @@ Start the Streamlit dashboard.
 py -m streamlit run app/main.py
 ```
 
-The dashboard will open in your browser and provide:
+The dashboard provides:
 
-- Job summary metrics
+- AI-powered job matching
+- Match score progress bars
+- Matched and missing skill breakdowns
+- Resume Gap Analysis
+- Match analytics
 - Keyword search
 - Company filtering
 - Location filtering
+- Minimum Match Score filtering
 - Job sorting
 - Job freshness indicators
 

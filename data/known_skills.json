@@ -1,0 +1,43 @@
+{
+    "programming": {
+        "weight": 3,
+        "skills": [
+            "Python",
+            "SQL"
+        ]
+    },
+    "analytics": {
+        "weight": 3,
+        "skills": [
+            "Power BI",
+            "Tableau",
+            "Pandas",
+            "Data Analysis",
+            "Data Visualization",
+            "Excel"
+        ]
+    },
+    "data_engineering": {
+        "weight": 2,
+        "skills": [
+            "ETL",
+            "SQLAlchemy",
+            "Spark"
+        ]
+    },
+    "cloud": {
+        "weight": 1,
+        "skills": [
+            "AWS",
+            "Azure"
+        ]
+    },
+    "operations": {
+        "weight": 2,
+        "skills": [
+            "ServiceNow",
+            "JIRA",
+            "Incident Management"
+        ]
+    }
+}

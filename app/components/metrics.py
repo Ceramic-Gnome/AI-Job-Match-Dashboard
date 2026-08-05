@@ -17,6 +17,10 @@ def display_metrics(all_jobs, filtered_jobs):
         st.metric(label="Companies", value=companies)
 
     with col4:
-        locations = len(set(job.location for job in filtered_jobs if job.location))
+        average_match = (
+            sum(job.match.score for job in filtered_jobs) / len(filtered_jobs)
+            if filtered_jobs
+            else 0
+        )
 
-        st.metric(label="Locations", value=locations)
+        st.metric(label="Average Match", value=f"{average_match:.0f}%")

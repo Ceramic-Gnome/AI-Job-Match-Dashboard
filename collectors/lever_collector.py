@@ -27,7 +27,7 @@ class LeverCollector:
                 JobData(
                     title=job.get("text"),
                     company=self.company,
-                    location=categories.get("location"),
+                    location=categories.get("location") or None,
                     description=job.get("descriptionPlain", ""),
                     url=job.get("hostedUrl"),
                     date_posted=None,

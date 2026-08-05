@@ -40,7 +40,7 @@ class GreenhouseCollector:
                 JobData(
                     title=job["title"],
                     company=self.company,
-                    location=job.get("location", {}).get("name"),
+                    location=job.get("location", {}).get("name") or None,
                     description=details.get("content", ""),
                     url=job["absolute_url"],
                     date_posted=None,

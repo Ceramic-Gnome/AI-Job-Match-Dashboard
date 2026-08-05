@@ -20,6 +20,7 @@ def display_filters(all_jobs):
     sort_option = st.sidebar.selectbox(
         "Sort By",
         [
+            "Match Score",
             "Newest First",
             "Oldest First",
             "Company (A–Z)",
@@ -28,11 +29,21 @@ def display_filters(all_jobs):
             "Job Title (Z–A)",
         ],
     )
+
+    min_match = st.sidebar.slider(
+        "Minimum Match Score (%)",
+        min_value=0,
+        max_value=100,
+        value=0,
+        step=5,
+    )
+
     return {
         "search": search_term,
         "company": selected_company,
         "location": selected_location,
         "sort": sort_option,
+        "min_match": min_match,
     }
 
 
@@ -64,8 +75,23 @@ def apply_filters(jobs, filters):
         filtered_jobs = [
             job for job in filtered_jobs if job.location == filters["location"]
         ]
+    if filters["min_match"] > 0:
+
+        filtered_jobs = [
+            job for job in filtered_jobs if job.match.score >= filters["min_match"]
+        ]
+
     # Sort the filtered jobs
-    if filters["sort"] == "Newest First":
+    if filters["sort"] == "Match Score":
+        filtered_jobs = sorted(
+            filtered_jobs,
+            key=lambda job: (
+                job.match.score,
+                job.date_posted or job.date_added,
+            ),
+            reverse=True,
+        )
+    elif filters["sort"] == "Newest First":
         filtered_jobs = sorted(
             filtered_jobs,
             key=lambda job: job.date_posted or job.date_added,

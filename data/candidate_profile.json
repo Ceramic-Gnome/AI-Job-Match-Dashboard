@@ -1,0 +1,33 @@
+{
+    "name": "Candidate",
+    "summary": "Experienced IT professional transitioning into data analytics with a background in network operations, troubleshooting, automation, and reporting.",
+    "skills": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "Power BI",
+        "Tableau",
+        "Data Analysis",
+        "Data Visualization",
+        "ETL",
+        "SQLite",
+        "SQLAlchemy",
+        "Git",
+        "GitHub",
+        "Streamlit",
+        "ServiceNow",
+        "JIRA",
+        "Incident Management",
+        "Root Cause Analysis",
+        "Network Operations"
+    ],
+    "experience": [
+        "Network Operations",
+        "IT Operations",
+        "Monitoring and Alert Management",
+        "Incident Response",
+        "Process Improvement",
+        "Technical Documentation"
+    ]
+}
