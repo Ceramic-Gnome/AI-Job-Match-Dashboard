@@ -38,6 +38,7 @@ class JobImporter:
                     title=job.title,
                     company=job.company,
                     location=job.location,
+                    work_type=job.work_type,
                     description=job.description,
                     url=job.url,
                     date_posted=job.date_posted,

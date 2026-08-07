@@ -9,6 +9,7 @@ class JobData:
     title: str
     company: str
     location: str | None
+    work_type: str
     description: str
     url: str
     date_posted: datetime | None

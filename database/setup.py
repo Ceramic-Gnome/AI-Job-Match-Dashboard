@@ -1,4 +1,5 @@
 from database.connection import Base, engine
+from database.models import Job  # noqa: F401
 
 print("Creating database...")
 

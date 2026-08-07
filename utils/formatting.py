@@ -1,4 +1,14 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+
+
+def ensure_utc(dt):
+    if dt is None:
+        return None
+
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+
+    return dt.astimezone(timezone.utc)
 
 
 def format_datetime(dt):
@@ -13,7 +23,10 @@ def get_job_badge(date_posted):
     if date_posted is None:
         return "Date Unknown", "gray"
 
-    now = datetime.now().astimezone()
+    date_posted = ensure_utc(date_posted)
+
+    now = datetime.now(timezone.utc)
+
     age = now - date_posted
 
     if age <= timedelta(days=1):
