@@ -6,6 +6,30 @@ The long-term goal of this project is to create an intelligent job search assist
 
 ---
 
+## Dashboard Overview
+
+The dashboard imports job postings, provides filtering capabilities, and ranks opportunities based on resume alignment.
+
+![Dashboard Overview](docs/images/dashboard-overview.png)
+
+---
+
+## AI-Powered Job Matching
+
+Each job posting is analyzed against a user's skill profile to identify matching skills, missing requirements, and areas for resume improvement.
+
+![Job Match Details](docs/images/job-details.png)
+
+---
+
+## Resume Gap Analysis
+
+The dashboard identifies frequently requested skills missing from the user's profile and prioritizes them based on job demand and skill importance.
+
+![Resume Gap Analysis](docs/images/resume-gap.png)
+
+---
+
 ## Project Goals
 
 This project is designed to demonstrate practical software engineering and data engineering skills, including:

@@ -150,6 +150,6 @@ def display_resume_gap_analysis(jobs, matcher):
 
     st.dataframe(gap_summary)
 
-    st.bar_chart(gap_summary["Missing_Count"])
+    st.bar_chart(gap_summary.set_index("Skill")["Missing_Count"])
 
     return gap_summary
