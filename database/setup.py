@@ -1,6 +1,4 @@
-from database.connection import engine, Base
-from database import models
-
+from database.connection import Base, engine
 
 print("Creating database...")
 

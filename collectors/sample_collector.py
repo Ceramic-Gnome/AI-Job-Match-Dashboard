@@ -9,6 +9,8 @@ class SampleCollector:
 
     def collect(self):
 
+        local_tz = datetime.now().astimezone().tzinfo
+
         json_file = Path("data/sample_jobs.json")
 
         with open(json_file, "r", encoding="utf-8") as f:
@@ -25,7 +27,9 @@ class SampleCollector:
                     location=job["location"],
                     description=job["description"],
                     url=job["url"],
-                    date_posted=datetime.strptime(job["date_posted"], "%Y-%m-%d"),
+                    date_posted=datetime.strptime(
+                        job["date_posted"], "%Y-%m-%d"
+                    ).replace(tzinfo=local_tz),
                     source="Sample",
                 )
             )

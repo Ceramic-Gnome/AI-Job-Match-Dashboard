@@ -12,7 +12,7 @@ def display_metrics(all_jobs, filtered_jobs):
         st.metric(label="Matching Jobs", value=len(filtered_jobs))
 
     with col3:
-        companies = len(set(job.company for job in filtered_jobs))
+        companies = len({job.company for job in filtered_jobs})
 
         st.metric(label="Companies", value=companies)
 

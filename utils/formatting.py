@@ -13,7 +13,7 @@ def get_job_badge(date_posted):
     if date_posted is None:
         return "Date Unknown", "gray"
 
-    now = datetime.now()
+    now = datetime.now().astimezone()
     age = now - date_posted
 
     if age <= timedelta(days=1):
@@ -23,3 +23,11 @@ def get_job_badge(date_posted):
         return "This Week", "orange"
 
     return "Older", "gray"
+
+
+def get_match_color(score: float) -> str:
+    if score >= 80:
+        return "green"
+    elif score >= 60:
+        return "orange"
+    return "red"

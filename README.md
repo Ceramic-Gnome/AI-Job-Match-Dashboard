@@ -77,7 +77,7 @@ The current version of the application can:
 
 **Current Version**
 
-**v0.6.0 - AI Job Matching**
+**v0.7.0 - Interactive Job Analysis and Resume Gap Insights**
 
 ### Completed
 
@@ -106,11 +106,19 @@ The current version of the application can:
 - Match analytics dashboard
 - Resume gap analysis
 - Weighted gap prioritization
+- Interactive Job Details
+- Match Analysis
+- Resume Gap Impact
+- Resume Strengths
+- HTML Description Cleaning
 
 ### Currently Working On
 
-- Interactive Job Details page
-- Resume optimization recommendations
+- Advanced Filtering
+- Saved Jobs
+- Resume Optimizer
+- Company Insights
+- AI Resume Suggestions
 
 ---
 
@@ -124,8 +132,8 @@ The current version of the application can:
 | v0.4.0 | Analytics Dashboard | ✅ Complete |
 | v0.5.0 | Live Job Collectors | ✅ Complete |
 | v0.6.0 | AI Job Matching & Resume Gap Analysis | ✅ Complete |
-| v0.7.0 | Interactive Job Details & Resume Recommendations | 🚧 In Progress |
-| v0.8.0 | AI Cover Letter Generation | 📅 Planned |
+| v0.7.0 | Interactive Job Analysis & Resume Gap Insights | ✅ Complete |
+| v0.8.0 | AI Cover Letter Generation | 🚧 In Progress |
 | v1.0.0 | Stable Public Release | 📅 Planned |
 
 ---

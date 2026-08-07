@@ -11,7 +11,7 @@ class SkillLoader:
         skills = []
         weights = {}
 
-        for category, info in data.items():
+        for info in data.values():
 
             weight = info["weight"]
 

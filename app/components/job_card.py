@@ -3,6 +3,7 @@ import streamlit as st
 from utils.formatting import (
     format_datetime,
     get_job_badge,
+    get_match_color,
 )
 
 
@@ -12,28 +13,18 @@ def display_job_card(job):
 
         st.markdown(f"### {job.title}")
 
-        if job.match:
-            score = job.match.score
+        color = get_match_color(job.match.score)
 
-            if score >= 80:
-                color = "green"
-            elif score >= 60:
-                color = "orange"
-            else:
-                color = "red"
+        st.progress(job.match.score / 100)
 
-            st.progress(score / 100)
+        st.markdown(f"🎯 **Match Score:** :{color}[{job.match.score:.0f}%]")
 
-            st.markdown(
-                f"🎯 **Match Score:** :{job.match.color}[{job.match.score:.0f}%]"
-            )
+        with st.expander("View skill match"):
+            st.write("**Matched Skills**")
+            st.write(", ".join(job.match.matched_skills) or "None")
 
-            with st.expander("View skill match"):
-                st.write("**Matched Skills**")
-                st.write(", ".join(job.match.matched_skills) or "None")
-
-                st.write("**Missing Skills**")
-                st.write(", ".join(job.match.missing_skills) or "None")
+            st.write("**Missing Skills**")
+            st.write(", ".join(job.match.missing_skills) or "None")
 
         badge_text, badge_color = get_job_badge(job.date_posted)
 
@@ -52,6 +43,9 @@ def display_job_card(job):
             st.write(f"📅 **Posted:** {format_datetime(job.date_posted)}")
 
         if job.url:
-            st.link_button("View Job Posting", job.url)
+            st.link_button("🌐 Apply on Company Website", job.url)
+
+        if st.button("View Job Details", key=f"details_{job.url}"):
+            st.session_state.selected_job = job
 
         st.markdown("---")

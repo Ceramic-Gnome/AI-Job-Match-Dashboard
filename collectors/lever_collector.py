@@ -1,6 +1,7 @@
 import requests
 
 from models.job_data import JobData
+from services.description_cleaner import DescriptionCleaner
 
 
 class LeverCollector:
@@ -8,6 +9,7 @@ class LeverCollector:
     def __init__(self, company):
         self.company = company
         self.url = f"https://api.lever.co/v0/postings/{company}"
+        self.cleaner = DescriptionCleaner()
 
     def collect(self):
 
@@ -28,7 +30,7 @@ class LeverCollector:
                     title=job.get("text"),
                     company=self.company,
                     location=categories.get("location") or None,
-                    description=job.get("descriptionPlain", ""),
+                    description=self.cleaner.clean(job.get("descriptionPlain", "")),
                     url=job.get("hostedUrl"),
                     date_posted=None,
                     source="Lever",

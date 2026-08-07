@@ -15,7 +15,7 @@ def main():
         location="Richmond, VA",
         description="Analyze business data and build dashboards using SQL and Power BI.",
         url="https://careers.carmax.com/",
-        date_posted=datetime.now()
+        date_posted=datetime.now().astimezone(),
     )
 
     # Save to the database

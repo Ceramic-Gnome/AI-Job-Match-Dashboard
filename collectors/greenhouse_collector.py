@@ -1,6 +1,7 @@
 import requests
 
 from models.job_data import JobData
+from services.description_cleaner import DescriptionCleaner
 
 
 class GreenhouseCollector:
@@ -8,6 +9,7 @@ class GreenhouseCollector:
     def __init__(self, company):
         self.company = company
         self.url = f"https://boards-api.greenhouse.io/v1/boards/" f"{company}/jobs"
+        self.cleaner = DescriptionCleaner()
 
     def _get_job_details(self, job_id):
 
@@ -41,7 +43,7 @@ class GreenhouseCollector:
                     title=job["title"],
                     company=self.company,
                     location=job.get("location", {}).get("name") or None,
-                    description=details.get("content", ""),
+                    description=self.cleaner.clean(details.get("content", "")),
                     url=job["absolute_url"],
                     date_posted=None,
                     source="Greenhouse",

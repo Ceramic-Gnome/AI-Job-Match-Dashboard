@@ -90,9 +90,7 @@ def display_analytics(jobs):
     st.bar_chart(timeline)
 
 
-def display_resume_gap_analysis(jobs, matcher):
-
-    st.subheader("📌 Resume Gap Analysis")
+def calculate_resume_gap_analysis(jobs, matcher):
 
     missing_skills = []
 
@@ -110,22 +108,40 @@ def display_resume_gap_analysis(jobs, matcher):
                 )
 
     if not missing_skills:
-        st.success("No skill gaps identified.")
-        return
+        return pd.DataFrame()
 
     gap_df = pd.DataFrame(missing_skills)
 
-    gap_summary = gap_df.groupby("Skill").agg(
-        Missing_Count=("Skill", "count"),
-        Weight=("Weight", "max"),
+    gap_summary = (
+        gap_df.groupby("Skill")
+        .agg(
+            Missing_Count=("Skill", "count"),
+            Weight=("Weight", "max"),
+        )
+        .reset_index()
     )
 
     gap_summary["Gap Priority"] = gap_summary["Missing_Count"] * gap_summary["Weight"]
-
     gap_summary = gap_summary.sort_values(
         by="Gap Priority",
         ascending=False,
     )
+
+    return gap_summary
+
+
+def display_resume_gap_analysis(jobs, matcher):
+
+    st.subheader("📌 Resume Gap Analysis")
+
+    gap_summary = calculate_resume_gap_analysis(
+        jobs,
+        matcher,
+    )
+
+    if gap_summary.empty:
+        st.success("No skill gaps identified.")
+        return gap_summary
 
     st.write(
         "Skills most frequently missing from your profile, "
@@ -134,4 +150,6 @@ def display_resume_gap_analysis(jobs, matcher):
 
     st.dataframe(gap_summary)
 
-    st.bar_chart(gap_summary["Gap Priority"])
+    st.bar_chart(gap_summary["Missing_Count"])
+
+    return gap_summary

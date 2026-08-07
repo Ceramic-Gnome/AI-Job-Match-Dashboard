@@ -9,11 +9,11 @@ def display_filters(all_jobs):
 
     search_term = st.sidebar.text_input("Search keywords")
 
-    companies = sorted(set(job.company for job in all_jobs))
+    companies = sorted({job.company for job in all_jobs})
 
     selected_company = st.sidebar.selectbox("Company", ["All"] + companies)
 
-    locations = sorted(set(job.location for job in all_jobs if job.location))
+    locations = sorted({job.location for job in all_jobs if job.location})
 
     selected_location = st.sidebar.selectbox("Location", ["All"] + locations)
 
